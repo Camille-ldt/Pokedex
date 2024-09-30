@@ -4,6 +4,7 @@ import { ui_builder } from "./ui_builder.js";
 import { utils } from "./utils.js";
 import { handler } from "./handler.js";
 
+
 const app = {
   mainContainer: document.querySelector("#app"),
   navBar: document.querySelector("#navbar_main"),
@@ -12,6 +13,7 @@ const app = {
     app.getAllPokemonsAndDisplay();
     app.dipatchNavBarListeners();
     app.dispatchCloseBtnEvent();
+    app.burgerMenu();
   },
   //La méthode pour nettoyer le <main>
 //  a méthode pour la gestion du menu
@@ -28,6 +30,15 @@ const app = {
     app.navBar
       .querySelector("#nav-item-add-team")
       .addEventListener("click", handler.handleClickAddTeamMenu);
+  },
+// Méthode permettant l'ouverture et la fermeture de la navBar en version mobile 
+  burgerMenu() {
+    const mobileMenuButton = document.querySelector(".navbar-brand");
+    const mobileMenu = document.querySelector(".navbar-menu");
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('is-active');
+    })
   },
   //Méthode pour la gestion des icones de fermeture des modals
   dispatchCloseBtnEvent() {

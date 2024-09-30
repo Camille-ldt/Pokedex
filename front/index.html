@@ -33,14 +33,14 @@
     <header class="my-5">
         <nav class="navbar is-fixed-top" id="navbar_main" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
-              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+              <a role="button" class="navbar-burger " aria-label="menu" aria-expanded="false">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
               </a>
             </div>
           
-            <div class="navbar-menu">
+            <div class="navbar-menu is-active">
               <div class="navbar-start is-flex-grow-1 is-justify-content-center">
                 <a class="navbar-item has-text-weight-bold" id="nav-item-home">
                     <span>Accueil</span>
@@ -80,65 +80,66 @@
     <main id="app" class="container is-flex is-align-item-center is-flex-wrap-wrap is-justify-content-space-evenly"></main>
     
 
-    <!-- OK MAIS RESPONSIVE A REVOIR -->
+    <!-- OK -->
     <!-- MODAL POKEMON DETAIL --> 
-    <div class="modal" id="pkm_detail">
+
+      <div class="modal" id="pkm_detail">
         <div class="modal-background"></div>
-        <div class="modal-card">
+        <div class="modal-card" style="width: 95%; max-width: 600px; max-height: 80vh;">
           <header class="modal-card-head has-background-link">
             <h2 class="modal-card-title pkm_name has-text-white"></h2>
             <button class="delete close" aria-label="close"></button>
           </header>
           <section class="modal-card-body">
-            <div class="columns is-vcentered">
-              <div class="column is-one-third">
-                <figure class="image is-square">
-                  <img src="" class="pkm_img_modal is-rounded">
+            <div class="columns is-mobile">
+              <div class="column is-4 is-flex is-align-items-center">
+                <figure class="image is-192x192 mx-auto">
+                  <img src="" class="pkm_img_modal" alt="Image du Pokémon">
                 </figure>
               </div>
-              <div class="column">
-                <h4 class="title is-4 mb-4">Statistiques :</h4>
-                <p class="modal_team_types tag is-danger is-light mb-3"></p>
+              <div class="column is-8">
+                <h4 class="title is-5 has-text-centered mb-1">Statistiques :</h4> <!-- Titre centré -->
+                <p class="modal_team_types tag is-danger is-light mb-3"></p> <!-- Tag centré -->
                 <div class="pkm_stats_modal">
                   <div class="field">
-                    <div class="is-flex is-justify-content-space-between mb-2">
-                      <label class="label">PV :</label>
-                      <span class="pokemon-hp"></span>
+                    <div class="is-flex is-justify-content-space-between mb-1">
+                      <label class="label is-small">PV :</label>
+                      <span class="pokemon-hp" style="font-size: 0.85rem;"></span>
                     </div>
                     <progress class="progress is-danger" slot="hp" value="" max="255"></progress>
                   </div>
                   <div class="field">
-                    <div class="is-flex is-justify-content-space-between mb-2">
-                      <label class="label">Attaque :</label>
-                      <span class="pokemon-atk"></span>
+                    <div class="is-flex is-justify-content-space-between mb-1">
+                      <label class="label is-small">Attaque :</label>
+                      <span class="pokemon-atk" style="font-size: 0.85rem;"></span>
                     </div>
                     <progress class="progress is-danger" slot="atk" value="" max="255"></progress>
                   </div>
                   <div class="field">
-                    <div class="is-flex is-justify-content-space-between mb-2">
-                      <label class="label">Défense :</label>
-                      <span class="pokemon-def"></span>
+                    <div class="is-flex is-justify-content-space-between mb-1">
+                      <label class="label is-small">Défense :</label>
+                      <span class="pokemon-def" style="font-size: 0.85rem;"></span>
                     </div>
                     <progress class="progress is-danger" slot="def" value="" max="255"></progress>
                   </div>
                   <div class="field">
-                    <div class="is-flex is-justify-content-space-between mb-2">
-                      <label class="label">Attaque Spéciale :</label>
-                      <span class="pokemon-atk_spe"></span>
+                    <div class="is-flex is-justify-content-space-between mb-1">
+                      <label class="label is-small">Attaque Spéciale :</label>
+                      <span class="pokemon-atk_spe" style="font-size: 0.85rem;"></span>
                     </div>
                     <progress class="progress is-danger" slot="atk_spe" value="" max="255"></progress>
                   </div>
                   <div class="field">
-                    <div class="is-flex is-justify-content-space-between mb-2">
-                      <label class="label">Défense Spéciale :</label>
-                      <span class="pokemon-def_spe"></span>
+                    <div class="is-flex is-justify-content-space-between mb-1">
+                      <label class="label is-small">Défense Spéciale :</label>
+                      <span class="pokemon-def_spe" style="font-size: 0.85rem;"></span>
                     </div>
                     <progress class="progress is-danger" slot="def_spe" value="" max="255"></progress>
                   </div>
                   <div class="field">
-                    <div class="is-flex is-justify-content-space-between mb-2">
-                      <label class="label">Vitesse :</label>
-                      <span class="pokemon-speed"></span>
+                    <div class="is-flex is-justify-content-space-between mb-1">
+                      <label class="label is-small">Vitesse :</label>
+                      <span class="pokemon-speed" style="font-size: 0.85rem;"></span>
                     </div>
                     <progress class="progress is-danger" slot="speed" value="" max="255"></progress>
                   </div>
@@ -153,10 +154,14 @@
               </div>
               <button class="button is-link btn_add_team">Ajouter à la Team</button>
             </form>
-            <button class="button is-light close">Retour</button>
+            <button class="button is-link close">Retour</button>
           </footer>
         </div>
       </div>
+      
+     
+
+   
     <!-- END MODAL POKEMON DETAIL -->
 
 
