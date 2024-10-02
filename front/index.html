@@ -33,7 +33,7 @@
     <header class="my-5">
         <nav class="navbar is-fixed-top" id="navbar_main" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
-              <a role="button" class="navbar-burger " aria-label="menu" aria-expanded="false">
+              <a role="button" class="navbar-burger " aria-label="menu" aria-expanded="false" data-target="navbar-menu">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
@@ -180,6 +180,12 @@
                 <i class="fas fa-pencil-alt"></i>
               </span>
             </button>
+            <button class="button is-small is-info mr-2 remove">
+            <span class="icon"> 
+              <!-- Pour supprimer une team -->
+              <i class="fa-solid fa-trash"></i>
+            </span>
+            </button>
             <button class="delete close" aria-label="close"></button>
           </header>
           <section class="modal-card-body">
@@ -202,6 +208,7 @@
                 </thead>
                 <tbody id="tbody_team">
                   <!-- Les lignes du tableau seront ajoutées dynamiquement ici -->
+                 
                 </tbody>
               </table>
             </div>
@@ -213,36 +220,38 @@
       </div>
     <!-- END MODAL TEAM DETAIL -->
 
+    <!-- OK -->
      <!-- MODAL TEAM DETAIL -->
-     <div class="modal" id="add_team_modal">
-        <div class="modal-background"></div>
-        <div class="modal-content">
-                <header class="modal-card-head">
-                    <h2 class="modal-card-title team_name">Ajouter une team</h2>
-                    <i class="fa fa-window-close close"></i>
-                </header>
-                <div class="modal-card-body">
-                    <form id="form_team_modal">
-                        <div class="field">
-                            <label class="label">Name</label>
-                            <div class="control">
-                              <input class="input" type="text" name="name" placeholder="Name of the the team">
-                            </div>
-                          </div>
-                        <div class="field">
-                            <label class="label">Description</label>
-                            <div class="control">
-                              <input class="input" type="text" name="description" placeholder="Facultatif">
-                            </div>
-                          </div>
-                          <div class="control">
-                            <button class="button is-primary">Submit</button>
-                          </div>
-                    </form>
-                </div>
-            
-        </div>
-    </div>
+   <div class="modal" id="add_team_modal">
+      <div class="modal-background"></div>
+      <div class="modal-card" style="width: 500px;">
+          <header class="modal-card-head has-background-link">
+              <h2 class="modal-card-title team_name">Ajouter une team</h2>
+              <button class="delete close" aria-label="close"></button>
+          </header>
+          <section class="modal-card-body">
+              <form id="form_team_modal">
+                  <div class="field">
+                      <label class="label">Nom</label>
+                      <div class="control">
+                          <input class="input is-rounded" type="text" name="name" placeholder="Nom de la Team">
+                      </div>
+                  </div>
+                  <div class="field">
+                      <label class="label">Description</label>
+                      <div class="control">
+                          <input class="input is-rounded" type="text" name="description" placeholder="Facultatif">
+                      </div>
+                  </div>
+                  <div class="control">
+                      <button class="button is-link">Ajouter</button>
+                  </div>
+              </form>
+          </section>
+      </div>
+  </div>
+
+   
     <!-- END MODAL TEAM DETAIL -->
 
     <template id="template-row-table">
@@ -298,25 +307,26 @@
     <!-- OK -->
     <!-- TEAM LIST ITEM TEMPLATE -->
     <template id="team-list-item">
-        <section class="box has-text-centered mb-5">
-            <div class="mb-4">
-                <h2 class="team-name title is-4 has-text-danger"></h2>
-                <p class="team-description subtitle is-6"></p>
-            </div>
-    
-            <div class="imgContainer is-flex is-justify-content-center is-flex-wrap-wrap mb-4">
-                <!-- Les images seront ajoutées ici via JavaScript -->
-            </div>
-            <div class="btnContainer">
-                <button class="button is-danger btnModalTeam">
-                    <span class="icon">
-                        <i class="fas fa-cog"></i>
-                    </span>
-                    <span>Administrer</span>
-                </button>
-            </div>
-        </section>
-    </template>
+      <section class="box has-text-centered mb-5">
+          <div class="mb-4">
+              <h2 class="team-name title is-4 has-text-danger"></h2>
+              <p class="team-description subtitle is-6"></p>
+          </div>
+  
+          <div class="imgContainer is-flex is-justify-content-center is-flex-wrap-wrap mb-4">
+              <!-- Les images seront ajoutées ici via JavaScript -->
+          </div>
+          <div class="btnContainer">
+              <button class="button is-danger btnModalTeam">
+                  <span class="icon">
+                      <i class="fas fa-cog"></i>
+                  </span>
+                  <span>Administrer</span>
+              </button>
+          </div>
+      </section>
+  </template>
+
     <!-- END TEAM LIST ITEM TEMPLATE -->
 
     <script type="module" src="./assets/js/index.js" defer></script>

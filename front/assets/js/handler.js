@@ -122,4 +122,12 @@ export const handler = {
     const team = await api.removePokemonFromTeam(pkmId, teamId);
     ui_builder.displayTeamModal(team);
   },
+
+  async handleClickRemoveTeam(event) {
+    const {teamId} = event.target.dataset;
+    const team = await api.removeTeam(teamId);
+    ui_builder.displayTeamModal(team);
+  }
 };
+
+// pareil ici ^

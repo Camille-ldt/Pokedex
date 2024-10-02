@@ -1,4 +1,4 @@
-const apiBaseUrl = "http://localhost:3000/api";
+const apiBaseUrl = "http://localhost:4000/api";
 
 export const api = {
   async fetchAllPokemons() {
@@ -157,5 +157,23 @@ export const api = {
     } catch (error) {
       console.log(error);
     }
+  },
+
+  async removeTeam(idTeam) {
+    try {
+      const httpResponses = await fetch(`${apiBaseUrl}/team/${idTeam}`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "DELETE",
+      });
+      if (!httpResponses.ok) return null
+      const team = await httpResponses.json();
+      return team
+    } catch (error) {
+      console.log(error);
+    }
   }
 };
+
+

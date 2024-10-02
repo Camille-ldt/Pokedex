@@ -108,6 +108,18 @@ export const ui_builder = {
     formEdit.addEventListener("submit", handler.handleSubmitFormTeamName);
     team_modal.querySelector(".team_name").textContent = team.name;
     team_modal.classList.add("is-active");
+
+
+
+      // Suppression d'une Team 
+      // const iconDeleteTeam = document.createElement('i');
+      // iconDeleteTeam.classList.add('fa-solid', 'fa-trash');
+      // iconDeleteTeam.dataset.teamId = team.id;
+      // iconDeleteTeam.addEventListener('click', handler.handleClickRemoveTeam)
+      const removeBtn = team_modal.querySelector(".remove");
+      const boxTeam = team_modal.querySelector(".box");
+      removeBtn.addEventListener("click", handler.handleClickRemoveTeam);
+      removeBtn.delete(boxTeam);
   },
 
   //La méthode pour afficher les box de preview sur la page des teams

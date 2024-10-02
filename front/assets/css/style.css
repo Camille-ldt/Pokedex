@@ -60,10 +60,10 @@ abbr{
   
   /* Ajustements pour le responsive */
   @media screen and (max-width: 1023px) {
-    .navbar-menu {
-      display: flex !important;
+    /* .navbar-menu {
+      display: flex ;
       justify-content: center;
-    }
+    } */
     
     .navbar-start {
       display: flex;

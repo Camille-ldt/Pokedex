@@ -16,7 +16,7 @@ const app = {
     app.burgerMenu();
   },
   //La méthode pour nettoyer le <main>
-//  a méthode pour la gestion du menu
+//  La méthode pour la gestion du menu
   dipatchNavBarListeners() {
     app.navBar
       .querySelector("#nav-item-home")
