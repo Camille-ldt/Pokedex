@@ -123,11 +123,27 @@ export const handler = {
     ui_builder.displayTeamModal(team);
   },
 
-  async handleClickRemoveTeam(event) {
-    const {teamId} = event.target.dataset;
-    const team = await api.removeTeam(teamId);
-    ui_builder.displayTeamModal(team);
+  // async handleClickRemoveTeam(event) {
+  //   const {teamId} = event.target.dataset;
+  //   const team = await api.removeTeam(teamId);
+  //   ui_builder.displayTeamModal(team);
+  // }
+
+  async handleClickRemoveTeam(idTeam) {
+    const deletedTeam = removeTeam(idTeam);
+
+    if (deletedTeam) {
+      const teamCard = document.querySelector(`.box[data-team-id='${idTeam}']`);
+      if (teamCard) {
+        teamCard.remove();
+      }
+      console.log(`Équipe avec l'ID ${idTeam} supprimée.`);
+    } else {
+      console.error("Impossible de supprimer l'équipe.");
+    }
   }
+
+
 };
 
-// pareil ici ^
+

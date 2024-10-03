@@ -118,8 +118,8 @@ export const ui_builder = {
       // iconDeleteTeam.addEventListener('click', handler.handleClickRemoveTeam)
       const removeBtn = team_modal.querySelector(".remove");
       const boxTeam = team_modal.querySelector(".box");
-      removeBtn.addEventListener("click", handler.handleClickRemoveTeam);
-      removeBtn.delete(boxTeam);
+      removeBtn.addEventListener("click", handler.handleClickRemoveTeam)
+      
   },
 
   //La méthode pour afficher les box de preview sur la page des teams
@@ -142,6 +142,7 @@ export const ui_builder = {
       figure.appendChild(img);
       imgContainer.appendChild(figure);
     });
+    
     //Finalement on insére dans le DOM !
     utils.mainContainer.appendChild(rowClone);
   },
