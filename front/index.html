@@ -64,9 +64,9 @@
               <div class="container has-text-centered">
                 
                 <h1 class="title">
-                    <img src="./assets/icons/pokeball.svg" alt="Pokéball">
+                    <img class="pokeball-img" src="./assets/icons/pokeball.svg" alt="Pokéball">
                     Bienvenue dans le Pokedex
-                    <img src="./assets/icons/pokeball.svg" alt="Pokéball">
+                    <img class="pokeball-img" src="./assets/icons/pokeball.svg" alt="Pokéball">
                 </h1>
                     
                 <p class="subtitle">Explorez les différents types et créez votre équipe Pokémon idéale.</p>
@@ -85,7 +85,8 @@
 
       <div class="modal" id="pkm_detail">
         <div class="modal-background"></div>
-        <div class="modal-card" style="width: 95%; max-width: 600px; max-height: 80vh;">
+        <div class="modal-card" >
+          <!-- style="width: 95%; max-width: 600px; max-height: 80vh;" -->
           <header class="modal-card-head has-background-link">
             <h2 class="modal-card-title pkm_name has-text-white"></h2>
             <button class="delete close" aria-label="close"></button>
@@ -170,17 +171,17 @@
     <div class="modal" id="team_modal">
         <div class="modal-background"></div>
         <div class="modal-card">
-          <header class="modal-card-head">
+          <header class="modal-card-head has-background-link">
             <h2 class="modal-card-title team_name"></h2>
             <form class="hidden is-flex-grow-1 mr-3">
               <input type="text" name="team_name" class="input is-medium input_team_name">
             </form>
-            <button class="button is-small is-info mr-2 edit">
+            <button class="button is-small has-background-grey-lighter mr-2 edit">
               <span class="icon">
                 <i class="fas fa-pencil-alt"></i>
               </span>
             </button>
-            <button class="button is-small is-info mr-2 remove">
+            <button class="button is-small has-background-grey-lighter mr-2 remove">
             <span class="icon"> 
               <!-- Pour supprimer une team -->
               <i class="fa-solid fa-trash"></i>
@@ -191,7 +192,7 @@
           <section class="modal-card-body">
             <p class="team_description mb-4"></p>
             <div class="table-container">
-              <table class="table is-fullwidth is-striped is-hoverable">
+              <table class="table is-fullwidth is-striped is-hoverable ">
                 <thead>
                   <tr>
                     <th><abbr title="numero">N°</abbr></th>
@@ -214,7 +215,7 @@
             </div>
           </section>
           <footer class="modal-card-foot">
-            <button class="button is-info close">Retour</button>
+            <button class="button is-info has-background-link close">Retour</button>
           </footer>
         </div>
       </div>
@@ -224,7 +225,8 @@
      <!-- MODAL TEAM DETAIL -->
    <div class="modal" id="add_team_modal">
       <div class="modal-background"></div>
-      <div class="modal-card" style="width: 500px;">
+      <div class="modal-card" >
+        <!-- style="width: 500px;" -->
           <header class="modal-card-head has-background-link">
               <h2 class="modal-card-title team_name">Ajouter une team</h2>
               <button class="delete close" aria-label="close"></button>

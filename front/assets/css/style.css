@@ -157,8 +157,9 @@ abbr{
   /* MODAL TEAM DETAIL */
 
   .modal-card {
-    width: 90%;
+    width: 70%;
     max-width: 1200px;
+    border-radius: 10px;
   }
 
   .modal-card-head {
@@ -219,11 +220,36 @@ abbr{
 @media screen and (max-width: 550px) {
   /* Header de la page */
   .title {
-    font-size: 1.5em;
+    font-size: 1em;
     padding-bottom: 10px;
   }
   .subtitle {
-    font-size: 1em;
+    font-size: 0.8em;
+  }
+  .pokeball-img {
+    width: 6%;
+  }
+
+  /* Accueil Card */
+  .card {
+    width: 80%;
+  }
+
+  /* Modal card detail */
+  .modal-card {
+    width: 80%;
+    
+  }
+  .modal-card-foot {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .select {
+    width: 50%;
+  }
+  .btn_add_team {
+    width: 50%;
   }
 
   /* Box Team */
@@ -231,49 +257,8 @@ abbr{
     width: 80%;
   }
 
-  /* Modal Team détail */
-  .table-container {
-    overflow-x: auto; /* Active un défilement horizontal si nécessaire */
-  }
-
-  .table {
-    display: block;
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  .table thead, .table tbody, .table th, .table td, .table tr {
-    display: block;
-  }
-
-  .table thead {
-    float: left; /* Fixe l'en-tête à gauche */
-  }
-
-  .table tbody {
-    width: auto;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-
-  .table tbody tr {
-    display: inline-block; /* Les lignes sont maintenant affichées les unes à côté des autres verticalement */
-    width: 100%;
-  }
-
-  .table tbody td {
-    text-align: left;
-    padding: 10px;
-    font-size: 14px;
-  }
-
-  .table th {
-    text-align: left;
-    padding: 10px;
-    font-size: 14px;
-  }
-
-  .table th::after {
-    content: ":";
+  /* Modal team detail */
+  .modal-card-title {
+    font-size: 1em;
   }
 }
