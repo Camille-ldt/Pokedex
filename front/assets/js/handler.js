@@ -129,21 +129,57 @@ export const handler = {
   //   ui_builder.displayTeamModal(team);
   // }
 
-  async handleClickRemoveTeam(idTeam) {
-    const deletedTeam = removeTeam(idTeam);
+  // async handleClickRemoveTeam(event) {
+  //   const idTeam = event.target.dataset.teamId;
+  //   try {
+  //     const result = await api.removeTeam(idTeam);
+  
+  //     if (result !== null) {
+  //       const teamCard = document.querySelector(`.box[data-team-id='${idTeam}']`);
+  //       if (teamCard) {
+  //         teamCard.remove();
+  //       }
+  //       console.log(`Équipe avec l'ID ${idTeam} supprimée.`);
+  //     } else {
+  //       console.error("Impossible de supprimer l'équipe. L'équipe n'existe peut-être pas.");
+  //     }
+  //   } catch (error) {
+  //     console.error("Erreur lors de la suppression de l'équipe:", error);
+  //   }
+  // }
 
-    if (deletedTeam) {
-      const teamCard = document.querySelector(`.box[data-team-id='${idTeam}']`);
-      if (teamCard) {
-        teamCard.remove();
+
+  async handleClickRemoveTeam(event) {
+    const idTeam = event.currentTarget.dataset.teamId;
+    if (!idTeam) {
+      console.error("ID de l'équipe non trouvé");
+      return;
+    }
+  
+    try {
+      const result = await api.removeTeam(idTeam);
+  
+      if (result !== null) {
+        // Fermer le modal si nécessaire
+        const modal = document.querySelector('.modal.is-active');
+        if (modal) {
+          modal.classList.remove('is-active');
+        }
+  
+        // Supprimer la carte de l'équipe du DOM
+        const teamCard = document.querySelector(`.box[data-team-id='${idTeam}']`);
+        if (teamCard) {
+          teamCard.remove();
+        } else {
+          console.warn("Carte de l'équipe non trouvée dans le DOM");
+        }
+  
+        console.log(`Équipe avec l'ID ${idTeam} supprimée.`);
+      } else {
+        console.error("Impossible de supprimer l'équipe. L'équipe n'existe peut-être pas.");
       }
-      console.log(`Équipe avec l'ID ${idTeam} supprimée.`);
-    } else {
-      console.error("Impossible de supprimer l'équipe.");
+    } catch (error) {
+      console.error("Erreur lors de la suppression de l'équipe:", error);
     }
   }
-
-
-};
-
-
+}

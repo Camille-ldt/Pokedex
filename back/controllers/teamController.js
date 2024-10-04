@@ -93,3 +93,63 @@ export async function removePokemonFromTeam(req, res) {
   console.log('CA ME SOULE ', team)
   res.status(200).json(team);
 }
+
+// export async function removeTeam(req, res) {
+//   const { teamId } = req.params;
+//   console.log(teamId);
+//   if (!teamId) return res.status(404).json("Manque l'ID");
+//   const team = await Team.findByPk(teamId, { include : {association:"pokemons", include : "types"}});
+//   console.log(team);
+//   await team.removeTeam(team)
+//   await team.reload()
+//   res.status(200).json(team);
+// }
+
+// export async function removeTeam(req, res) {
+//   const { teamId } = req.params;
+//   console.log(teamId);
+
+//   if (!teamId) return res.status(400).json({ error: "L'ID de l'équipe est manquant" });
+
+//   try {
+//     const team = await Team.findByPk(teamId, { include: { association: "pokemons", include: "types" } });
+
+//     if (!team) {
+//       return res.status(404).json({ error: "Équipe non trouvée" });
+//     }
+
+//     await team.destroy(); // Supprime l'équipe de la base de données
+
+//     res.status(200).json({ message: "Équipe supprimée avec succès" });
+//   } catch (error) {
+//     console.error("Erreur lors de la suppression de l'équipe:", error);
+//     res.status(500).json({ error: "Erreur serveur lors de la suppression de l'équipe" });
+//   }
+// }
+
+export async function removeTeam(req, res) {
+  const { teamId } = req.params;
+
+  if (!teamId) return res.status(400).json({ error: "L'ID de l'équipe est manquant" });
+
+  try {
+    const team = await Team.findByPk(teamId, { 
+      include: { association: "pokemons", include: "types" } 
+    });
+
+    if (!team) {
+      return res.status(404).json({ error: "Équipe non trouvée" });
+    }
+
+    // Supprimer d'abord les associations dans team_pokemon
+    await team.setPokemons([]);
+
+    // Ensuite, supprimer l'équipe
+    await team.destroy();
+
+    res.status(200).json({ message: "Équipe supprimée avec succès" });
+  } catch (error) {
+    console.error("Erreur lors de la suppression de l'équipe:", error);
+    res.status(500).json({ error: "Erreur serveur lors de la suppression de l'équipe" });
+  }
+}

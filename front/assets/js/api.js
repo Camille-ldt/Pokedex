@@ -159,19 +159,53 @@ export const api = {
     }
   },
 
+  // async removeTeam(idTeam) {
+  //   try {
+  //     const httpResponse = await fetch(`${apiBaseUrl}/team/${idTeam}`, {
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       method: "DELETE",
+  //     });
+      
+  //     if (!httpResponse.ok) {
+  //       if (httpResponse.status === 404) {
+  //         console.log("Équipe non trouvée");
+  //         return null;
+  //       }
+  //       throw new Error(`HTTP error! status: ${httpResponse.status}`);
+  //     }
+      
+  //     const contentType = httpResponse.headers.get("content-type");
+  //     if (contentType && contentType.includes("application/json")) {
+  //       return await httpResponse.json();
+  //     } else {
+  //       // Si la réponse n'est pas du JSON, retournez simplement true pour indiquer le succès
+  //       return true;
+  //     }
+  //   } catch (error) {
+  //     console.error("Erreur lors de la suppression de l'équipe:", error);
+  //     return null;
+  //   }
+  // },
+
   async removeTeam(idTeam) {
     try {
-      const httpResponses = await fetch(`${apiBaseUrl}/team/${idTeam}`, {
+      const httpResponse = await fetch(`${apiBaseUrl}/team/${idTeam}`, {
         headers: {
           "Content-Type": "application/json",
         },
         method: "DELETE",
       });
-      if (!httpResponses.ok) return null
-      const team = await httpResponses.json();
-      return team
+      
+      if (!httpResponse.ok) {
+        throw new Error(`HTTP error! status: ${httpResponse.status}`);
+      }
+      
+      return true; // Retourne true pour indiquer le succès
     } catch (error) {
-      console.log(error);
+      console.error("Erreur lors de la suppression de l'équipe:", error);
+      return null;
     }
   }
 };

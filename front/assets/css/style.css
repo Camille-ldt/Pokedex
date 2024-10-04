@@ -60,10 +60,6 @@ abbr{
   
   /* Ajustements pour le responsive */
   @media screen and (max-width: 1023px) {
-    /* .navbar-menu {
-      display: flex ;
-      justify-content: center;
-    } */
     
     .navbar-start {
       display: flex;
@@ -217,4 +213,67 @@ abbr{
     margin: 5px;
     border-radius: 50%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive version mobile */
+@media screen and (max-width: 550px) {
+  /* Header de la page */
+  .title {
+    font-size: 1.5em;
+    padding-bottom: 10px;
+  }
+  .subtitle {
+    font-size: 1em;
+  }
+
+  /* Box Team */
+  .box {
+    width: 80%;
+  }
+
+  /* Modal Team détail */
+  .table-container {
+    overflow-x: auto; /* Active un défilement horizontal si nécessaire */
+  }
+
+  .table {
+    display: block;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .table thead, .table tbody, .table th, .table td, .table tr {
+    display: block;
+  }
+
+  .table thead {
+    float: left; /* Fixe l'en-tête à gauche */
+  }
+
+  .table tbody {
+    width: auto;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .table tbody tr {
+    display: inline-block; /* Les lignes sont maintenant affichées les unes à côté des autres verticalement */
+    width: 100%;
+  }
+
+  .table tbody td {
+    text-align: left;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .table th {
+    text-align: left;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .table th::after {
+    content: ":";
+  }
 }

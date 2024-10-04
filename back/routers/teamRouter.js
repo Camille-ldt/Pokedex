@@ -12,3 +12,4 @@ router.get('/team/:idTeam/pokemon/:idPokemon', cw(teamController.addPokemonToTea
 router.put('/team/:id', cw(teamController.editTeam));
 router.post('/team', cw(teamController.createTeam));
 router.delete('/team/:teamId/pokemon/:pkmId', cw(teamController.removePokemonFromTeam));
+router.delete('/team/:teamId', cw(teamController.removeTeam));

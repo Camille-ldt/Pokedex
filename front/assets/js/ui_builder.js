@@ -116,9 +116,14 @@ export const ui_builder = {
       // iconDeleteTeam.classList.add('fa-solid', 'fa-trash');
       // iconDeleteTeam.dataset.teamId = team.id;
       // iconDeleteTeam.addEventListener('click', handler.handleClickRemoveTeam)
+
+      // const removeBtn = team_modal.querySelector(".remove");
+      // const boxTeam = team_modal.querySelector(".box");
+      // removeBtn.addEventListener("click", handler.handleClickRemoveTeam)
+
       const removeBtn = team_modal.querySelector(".remove");
-      const boxTeam = team_modal.querySelector(".box");
-      removeBtn.addEventListener("click", handler.handleClickRemoveTeam)
+      removeBtn.dataset.teamId = team.id;
+      removeBtn.addEventListener("click", handler.handleClickRemoveTeam);
       
   },
 

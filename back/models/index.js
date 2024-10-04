@@ -23,7 +23,8 @@ Pokemon.belongsToMany(Team, {
 Team.belongsToMany(Pokemon, {
     as:"pokemons",
     through:"team_pokemon",
-    foreignKey:"team_id"
+    foreignKey:"team_id",
+    onDelete: 'CASCADE',
 });
 
 export { Pokemon, Type, Team };
