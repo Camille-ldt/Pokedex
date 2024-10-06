@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
-<head>
+    <head>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,13 +24,12 @@
 
     <!-- Custom JS -->
     <!-- defer est sous entendu avec un type=module -->
-</head>
+    </head>
 
-<body>
+    <body> 
     
-    <!-- OK -->
-    <!-- HEADER   -->
-    <header class="my-5">
+      <header class="my-5">
+<!-- HEADER   -->
         <nav class="navbar is-fixed-top" id="navbar_main" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
               <a role="button" class="navbar-burger " aria-label="menu" aria-expanded="false" data-target="navbar-menu">
@@ -73,16 +72,14 @@
               </div>
             </div>
           </section>
-    </header>
+      </header>
 
-    <!-- OK -->
-    <!-- ALL POKEMON -->
-    <main id="app" class="container is-flex is-align-item-center is-flex-wrap-wrap is-justify-content-space-evenly"></main>
+      <!-- ALL POKEMON -->
+      <main id="app" class="container is-flex is-align-item-center is-flex-wrap-wrap is-justify-content-space-evenly"></main>
     
-
-    <!-- OK -->
+      <section class="modal_pkm_detail">
     <!-- MODAL POKEMON DETAIL --> 
-
+    
       <div class="modal" id="pkm_detail">
         <div class="modal-background"></div>
         <div class="modal-card" >
@@ -159,14 +156,10 @@
           </footer>
         </div>
       </div>
-      
-     
-
+       <!-- END MODAL POKEMON DETAIL -->
+      </section>
    
-    <!-- END MODAL POKEMON DETAIL -->
-
-
-    <!-- OK -->
+      <section class="modal_team_detail">
     <!-- MODAL TEAM DETAIL -->
     <div class="modal" id="team_modal">
         <div class="modal-background"></div>
@@ -220,8 +213,9 @@
         </div>
       </div>
     <!-- END MODAL TEAM DETAIL -->
+      </section>
 
-    <!-- OK -->
+      <section class="modal_add_team">
      <!-- MODAL TEAM DETAIL -->
    <div class="modal" id="add_team_modal">
       <div class="modal-background"></div>
@@ -252,10 +246,10 @@
           </section>
       </div>
   </div>
-
-   
     <!-- END MODAL TEAM DETAIL -->
+      </section>
 
+      <section class="template_row_table_team">
     <template id="template-row-table">
         <tr>
             <td slot="id"></td>
@@ -270,7 +264,9 @@
             <td slot="options"></td>
         </tr>
     </template>
+      </section>
 
+      <section class="template_pkm_list_homepage">
     <!-- POKEMON LIST ITEM TEMPLATE -->
     <template id="pokemon-list-item-template">
         <div class="card mb-6 has-text-centered pt-4">
@@ -285,8 +281,9 @@
         </div>
     </template>
     <!-- END POKEMON LIST ITEM TEMPLATE -->
+      </section>
 
-    <!-- OK -->
+      <section class="template_type-list">
     <!-- TYPES LIST ITEM TEMPLATE -->
     <div id="types-list" class="columns is-multiline is-centered">
         <template id="types-list-item-template">
@@ -300,13 +297,10 @@
           </div>
         </template>
       </div>
+<!-- END TYPES LIST ITEM TEMPLATE -->
+      </section>
 
-    
-
-    
-    <!-- END TYPES LIST ITEM TEMPLATE -->
-
-    <!-- OK -->
+      <section class="template_team_list_item">
     <!-- TEAM LIST ITEM TEMPLATE -->
     <template id="team-list-item">
       <section class="box has-text-centered mb-5">
@@ -328,10 +322,14 @@
           </div>
       </section>
   </template>
+<!-- END TEAM LIST ITEM TEMPLATE -->
+      </section>
+    
+      <footer>
+        
+      </footer>
+      <script type="module" src="./assets/js/index.js" defer></script>
 
-    <!-- END TEAM LIST ITEM TEMPLATE -->
-
-    <script type="module" src="./assets/js/index.js" defer></script>
-</body>
-
+    </body>
 </html>
+
