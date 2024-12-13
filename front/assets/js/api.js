@@ -5,7 +5,6 @@ export const api = {
     try {
       //On appel l'API avec fetch (defaut = GET) pour récupérer la liste de tous les pokemons
       const httpResponses = await fetch(`${apiBaseUrl}/pokemons`);
-      //Si le status de la réponse n'est pas 20X alors on retourne null
       if (!httpResponses.ok) return null;
       //Sinon on cast la réponse vers du JSON, et on retourne le tout.
       const pokemons = await httpResponses.json();

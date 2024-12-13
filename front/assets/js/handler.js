@@ -24,7 +24,7 @@ export const handler = {
     ui_builder.displayModalDetail(pokemon, teams);
   },
 
-  //La méthode qui répond au clic sur le bouton type du menuµ
+  //La méthode qui répond au clic sur le bouton type du menu
   //Récupére tous les types et les affiches !
   async handleClickTypeMenu() {
     //On va chercher tous les types
@@ -37,7 +37,7 @@ export const handler = {
   },
 
   //La méthode qui permet de récupérer les teams d'un pokemon
-  async handleClickTeamMenu(event) {
+  async handleClickTeamMenu() {
     const teams = await api.fetchTeamsAndPokemons();
     utils.cleanBoard();
     teams.forEach(ui_builder.displayTeamBox);

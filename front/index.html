@@ -5,9 +5,17 @@
     <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explorez notre Pokédex complet avec des informations détaillées sur chaque Pokémon, y compris leurs types, statistiques, évolutions et capacités spéciales.">
+    <meta name="keywords" content="Pokédex, Pokémon, types de Pokémon, statistiques de Pokémon, évolutions, capacités spéciales">
+    <meta name="author" content="Pokédex">
 
     <!-- Title -->
-    <title>Pokedex</title>
+    <title>Pokédex</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml"
@@ -29,7 +37,7 @@
     <body> 
     
       <header class="my-5">
-<!-- HEADER   -->
+
         <nav class="navbar is-fixed-top" id="navbar_main" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
               <a role="button" class="navbar-burger " aria-label="menu" aria-expanded="false" data-target="navbar-menu">
@@ -58,13 +66,13 @@
             </div>
           </nav>
           
-          <section class="hero">
+          <section class="header">
             <div class="hero-body">
               <div class="container has-text-centered">
                 
                 <h1 class="title">
                     <img class="pokeball-img" src="./assets/icons/pokeball.svg" alt="Pokéball">
-                    Bienvenue dans le Pokedex
+                    Bienvenue dans le Pokédex
                     <img class="pokeball-img" src="./assets/icons/pokeball.svg" alt="Pokéball">
                 </h1>
                     
@@ -216,11 +224,10 @@
       </section>
 
       <section class="modal_add_team">
-     <!-- MODAL TEAM DETAIL -->
+  
    <div class="modal" id="add_team_modal">
       <div class="modal-background"></div>
       <div class="modal-card" >
-        <!-- style="width: 500px;" -->
           <header class="modal-card-head has-background-link">
               <h2 class="modal-card-title team_name">Ajouter une team</h2>
               <button class="delete close" aria-label="close"></button>
@@ -246,7 +253,7 @@
           </section>
       </div>
   </div>
-    <!-- END MODAL TEAM DETAIL -->
+
       </section>
 
       <section class="template_row_table_team">
@@ -267,12 +274,11 @@
       </section>
 
       <section class="template_pkm_list_homepage">
-    <!-- POKEMON LIST ITEM TEMPLATE -->
     <template id="pokemon-list-item-template">
         <div class="card mb-6 has-text-centered pt-4">
             <a>
                 <div class="card-image">
-                    <img class="pkm_img" src="">
+                    <img class="pkm_img" src="" alt="Image de Pokémon">
                 </div>
                 <div class="card-content">
                     <p></p>
@@ -280,7 +286,6 @@
             </a>
         </div>
     </template>
-    <!-- END POKEMON LIST ITEM TEMPLATE -->
       </section>
 
       <section class="template_type-list">
@@ -301,7 +306,7 @@
       </section>
 
       <section class="template_team_list_item">
-    <!-- TEAM LIST ITEM TEMPLATE -->
+  
     <template id="team-list-item">
       <section class="box has-text-centered mb-5">
           <div class="mb-4">
@@ -322,14 +327,32 @@
           </div>
       </section>
   </template>
-<!-- END TEAM LIST ITEM TEMPLATE -->
+
       </section>
     
-      <footer>
-        
-      </footer>
-      <script type="module" src="./assets/js/index.js" defer></script>
+      <footer class="footer has-background-light">
+        <div class="content has-text-centered">
+            <p class="has-text-weight-bold">
+                &copy; 2024 Pokédex
+            </p>
+            <p>Tous droits réservés</p>
+            <div class="social-icons">
+                <a href="https://twitter.com" class="icon" target="_blank" rel="noopener">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://facebook.com" class="icon" target="_blank" rel="noopener">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://instagram.com" class="icon" target="_blank" rel="noopener">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
 
+      <script type="module" src="./assets/js/index.js" defer></script>
+      <script type="module" src="./assets/js/security.js" defer></script>
+      
     </body>
 </html>
 
