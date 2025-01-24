@@ -1,4 +1,4 @@
-# S14-Pokedex
+# Pokedex
 
 ## Structure du projet : 
 
