@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explorez notre Pokédex complet avec des informations détaillées sur chaque Pokémon, y compris leurs types, statistiques, évolutions et capacités spéciales.">
+    <meta name="keywords" content="Pokédex, Pokémon, types de Pokémon, statistiques de Pokémon, évolutions, capacités spéciales">
+    <meta name="author" content="Pokédex">
+
+    <!-- Title -->
+    <title>Pokédex</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='24px' height='24px' stroke-width='1.5' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' color='%23000000'%3E%3Cpath d='M3 3.6V20.4C3 20.7314 3.26863 21 3.6 21H20.4C20.7314 21 21 20.7314 21 20.4V3.6C21 3.26863 20.7314 3 20.4 3H3.6C3.26863 3 3 3.26863 3 3.6Z' stroke='%23000000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpath d='M6 6L6 16' stroke='%23000000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpath d='M10 6V9' stroke='%23000000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpath d='M14 6V13' stroke='%23000000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpath d='M18 6V11' stroke='%23000000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3C/svg%3E">
+
+    <!-- Bulma -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS-->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- Custom JS -->
+    <!-- defer est sous entendu avec un type=module -->
+    </head>
+
+    <body> 
+  
+      <header class="my-5">
+
+        <nav class="navbar is-fixed-top" id="navbar_main" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+              <a role="button" class="navbar-burger " aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+          
+            <div class="navbar-menu is-active">
+              <div class="navbar-start is-flex-grow-1 is-justify-content-center">
+                <a class="navbar-item has-text-weight-bold" id="nav-item-home">
+                    <span>Accueil</span>
+                  </a>
+                  <a class="navbar-item has-text-weight-bold" id="nav-item-type">
+                    <span>Type</span>
+                  </a>
+                  <a class="navbar-item has-text-weight-bold" id="nav-item-team">
+                    <span>Team</span>
+                  </a>
+                  <a class="navbar-item has-text-weight-bold" id="nav-item-add-team">
+                    <span class="icon"><i class="fas fa-plus-circle"></i></span>
+                    <span>Ajouter une Team</span>
+                  </a>
+              </div>
+            </div>
+          </nav>
+          
+          <section class="header">
+            <div class="hero-body">
+              <div class="container has-text-centered">
+                
+                <h1 class="title">
+                    <img class="pokeball-img" src="./assets/icons/pokeball.svg" alt="Pokéball">
+                    Bienvenue dans le Pokédex
+                    <img class="pokeball-img" src="./assets/icons/pokeball.svg" alt="Pokéball">
+                </h1>
+                    
+                <p class="subtitle">Explorez les différents types et créez votre équipe Pokémon idéale.</p>
+              </div>
+            </div>
+          </section>
+      </header>
+
+      <!-- ALL POKEMON -->
+      <main id="app" class="container is-flex is-align-item-center is-flex-wrap-wrap is-justify-content-space-evenly mb-6"></main>
+    
+      <section class="modal_pkm_detail">
+    <!-- MODAL POKEMON DETAIL --> 
+    
+      <div class="modal" id="pkm_detail">
+        <div class="modal-background"></div>
+        <div class="modal-card" >
+          <header class="modal-card-head has-background-link">
+            <h2 class="modal-card-title pkm_name has-text-white"></h2>
+            <button class="delete close" aria-label="close"></button>
+          </header>
+          <section class="modal-card-body">
+            <div class="columns is-mobile">
+              <div class="column is-4 is-flex is-align-items-center">
+                <figure class="image is-192x192 mx-auto">
+                  <img src="" class="pkm_img_modal" alt="Image du Pokémon">
+                </figure>
+              </div>
+              <div class="column is-8">
+                <h4 class="title is-5 has-text-centered mb-1">Statistiques :</h4> <!-- Titre centré -->
+                <p class="modal_team_types tag is-danger is-light mb-3"></p> <!-- Tag centré -->
+                <div class="pkm_stats_modal">
+                  <div class="field">
+                    <div class="is-flex is-justify-content-space-between mb-1">
+                      <label class="label is-small">PV :</label>
+                      <span class="pokemon-hp" style="font-size: 0.85rem;"></span>
+                    </div>
+                    <progress class="progress is-danger" slot="hp" value="" max="255"></progress>
+                  </div>
+                  <div class="field">
+                    <div class="is-flex is-justify-content-space-between mb-1">
+                      <label class="label is-small">Attaque :</label>
+                      <span class="pokemon-atk" style="font-size: 0.85rem;"></span>
+                    </div>
+                    <progress class="progress is-danger" slot="atk" value="" max="255"></progress>
+                  </div>
+                  <div class="field">
+                    <div class="is-flex is-justify-content-space-between mb-1">
+                      <label class="label is-small">Défense :</label>
+                      <span class="pokemon-def" style="font-size: 0.85rem;"></span>
+                    </div>
+                    <progress class="progress is-danger" slot="def" value="" max="255"></progress>
+                  </div>
+                  <div class="field">
+                    <div class="is-flex is-justify-content-space-between mb-1">
+                      <label class="label is-small">Attaque Spéciale :</label>
+                      <span class="pokemon-atk_spe" style="font-size: 0.85rem;"></span>
+                    </div>
+                    <progress class="progress is-danger" slot="atk_spe" value="" max="255"></progress>
+                  </div>
+                  <div class="field">
+                    <div class="is-flex is-justify-content-space-between mb-1">
+                      <label class="label is-small">Défense Spéciale :</label>
+                      <span class="pokemon-def_spe" style="font-size: 0.85rem;"></span>
+                    </div>
+                    <progress class="progress is-danger" slot="def_spe" value="" max="255"></progress>
+                  </div>
+                  <div class="field">
+                    <div class="is-flex is-justify-content-space-between mb-1">
+                      <label class="label is-small">Vitesse :</label>
+                      <span class="pokemon-speed" style="font-size: 0.85rem;"></span>
+                    </div>
+                    <progress class="progress is-danger" slot="speed" value="" max="255"></progress>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <footer class="modal-card-foot">
+            <form id="form_add_pkm_team" class="is-flex is-align-items-center is-justify-content-center">
+              <div class="select is-link mr-2">
+                <select></select>
+              </div>
+              <button class="button is-link btn_add_team">Ajouter à la Team</button>
+            </form>
+            <button class="button is-link close">Retour</button>
+          </footer>
+        </div>
+      </div>
+       <!-- END MODAL POKEMON DETAIL -->
+      </section>
+   
+      <section class="modal_team_detail">
+    <!-- MODAL TEAM DETAIL -->
+    <div class="modal" id="team_modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head has-background-link">
+            <h2 class="modal-card-title team_name"></h2>
+            <form class="hidden is-flex-grow-1 mr-3">
+              <input type="text" name="team_name" class="input is-medium input_team_name">
+            </form>
+            <button class="button is-small has-background-grey-lighter mr-2 edit">
+              <span class="icon">
+                <i class="fas fa-pencil-alt"></i>
+              </span>
+            </button>
+            <button class="button is-small has-background-grey-lighter mr-2 remove">
+            <span class="icon"> 
+              <!-- Pour supprimer une team -->
+              <i class="fa-solid fa-trash"></i>
+            </span>
+            </button>
+            <button class="delete close" aria-label="close"></button>
+          </header>
+          <section class="modal-card-body">
+            <p class="team_description mb-4"></p>
+            <div class="table-container">
+              <table class="table is-fullwidth is-striped is-hoverable ">
+                <thead>
+                  <tr>
+                    <th><abbr title="numero">N°</abbr></th>
+                    <th><abbr title="name">Nom</abbr></th>
+                    <th><abbr title="hp">PV</abbr></th>
+                    <th><abbr title="atk">Attaque</abbr></th>
+                    <th><abbr title="def">Défense</abbr></th>
+                    <th><abbr title="atk_spe">Attaque Spéciale</abbr></th>
+                    <th><abbr title="def_spe">Défense Spéciale</abbr></th>
+                    <th><abbr title="speed">Vitesse</abbr></th>
+                    <th><abbr title="types">Types</abbr></th>
+                    <th><abbr title="options">Options</abbr></th>
+                  </tr>
+                </thead>
+                <tbody id="tbody_team">
+                  <!-- Les lignes du tableau seront ajoutées dynamiquement ici -->
+                 
+                </tbody>
+              </table>
+            </div>
+          </section>
+          <footer class="modal-card-foot">
+            <button class="button is-info has-background-link close">Retour</button>
+          </footer>
+        </div>
+      </div>
+    <!-- END MODAL TEAM DETAIL -->
+      </section>
+
+      <section class="modal_add_team">
+  
+   <div class="modal" id="add_team_modal">
+      <div class="modal-background"></div>
+      <div class="modal-card" >
+          <header class="modal-card-head has-background-link">
+              <h2 class="modal-card-title team_name">Ajouter une team</h2>
+              <button class="delete close" aria-label="close"></button>
+          </header>
+          <section class="modal-card-body">
+              <form id="form_team_modal">
+                  <div class="field">
+                      <label class="label">Nom</label>
+                      <div class="control">
+                          <input class="input is-rounded" type="text" name="name" placeholder="Nom de la Team">
+                      </div>
+                  </div>
+                  <div class="field">
+                      <label class="label">Description</label>
+                      <div class="control">
+                          <input class="input is-rounded" type="text" name="description" placeholder="Facultatif">
+                      </div>
+                  </div>
+                  <div class="control is-flex is-justify-content-center mt-5">
+                      <button class="button is-link">Ajouter</button>
+                  </div>
+              </form>
+          </section>
+      </div>
+  </div>
+
+      </section>
+
+      <section class="template_row_table_team">
+    <template id="template-row-table">
+        <tr>
+            <td slot="id"></td>
+            <td slot="name"></td>
+            <td slot="hp"></td>
+            <td slot="atk"></td>
+            <td slot="def"></td>
+            <td slot="atk_spe"></td>
+            <td slot="def_spe"></td>
+            <td slot="speed"></td>
+            <td slot="types"></td>
+            <td slot="options"></td>
+        </tr>
+    </template>
+      </section>
+
+      <section class="template_pkm_list_homepage">
+    <template id="pokemon-list-item-template">
+        <div class="card mb-6 has-text-centered pt-4">
+            <a>
+                <div class="card-image">
+                    <img class="pkm_img" src="" alt="Image de Pokémon">
+                </div>
+                <div class="card-content">
+                    <p></p>
+                </div>
+            </a>
+        </div>
+    </template>
+      </section>
+
+      <section class="template_type-list">
+    <!-- TYPES LIST ITEM TEMPLATE -->
+    <div id="types-list" class="columns is-multiline is-centered">
+        <template id="types-list-item-template">
+          <div class="column is-3-desktop is-4-tablet is-6-mobile">
+            <button class="button is-fullwidth is-rounded type-button">
+              <span class="icon mr-2">
+                <img src="" alt="" class="type-icon">
+              </span>
+              <span class="type-name"></span>
+            </button>
+          </div>
+        </template>
+      </div>
+<!-- END TYPES LIST ITEM TEMPLATE -->
+      </section>
+
+      <section class="template_team_list_item">
+  
+    <template id="team-list-item">
+      <section class="box has-text-centered mb-5">
+          <div class="mb-4">
+              <h2 class="team-name title is-4 has-text-danger"></h2>
+              <p class="team-description subtitle is-6"></p>
+          </div>
+  
+          <div class="imgContainer is-flex is-justify-content-center is-flex-wrap-wrap mb-4 mgb-medium">
+              <!-- Les images seront ajoutées ici via JavaScript -->
+          </div>
+          <div class="btnContainer">
+              <button class="button is-danger btnModalTeam">
+                  <span class="icon">
+                      <i class="fas fa-cog"></i>
+                  </span>
+                  <span>Administrer</span>
+              </button>
+          </div>
+      </section>
+  </template>
+
+      </section>
+    
+      <footer class="footer has-background-light has-text-black has-text-centered p-4">
+        <div class="content has-text-centered">
+            <p class="has-text-weight-bold">
+                &copy; 2024 Pokédex
+            </p>
+            <p>Tous droits réservés</p>
+            <div class="social-icons">
+                <a href="https://twitter.com" class="icon" target="_blank" rel="noopener">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://facebook.com" class="icon" target="_blank" rel="noopener">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://instagram.com" class="icon" target="_blank" rel="noopener">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+      <script type="module" src="./assets/js/index.js" defer></script>
+      <script type="module" src="./assets/js/security.js" defer></script>
+      
+    </body>
+</html>
+
