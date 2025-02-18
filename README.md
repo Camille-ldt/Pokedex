@@ -1,24 +1,32 @@
-# Pokedex
+# Pokédex
 
-## Structure du projet : 
+Bienvenue dans le projet **Pokédex** ! Ce projet a été conçu pour permettre aux utilisateurs de découvrir et explorer le monde des Pokémon à travers une interface simple et intuitive.
 
-### Dossier back : 
+## Description
 
-- Un dossier data qui contient les fichiers sql :
-    - create_tables.sql : permet de créer les tables de la bases de données
-    - seeding_tables.sql : permet de remplir les tables avec les données
-- .env.example : nos variables d'environnement.
-- package.json : contient nos dependances & les scripts (que vous devrez faire en vous inspirant des projets précédents.)
+Le **Pokédex** est une application permettant aux utilisateurs de visualiser et explorer des informations sur tous les Pokémon. Il inclut des détails comme leurs types, statistiques et bien plus encore.
 
-### Dossier docs : 
+## Technologies utilisées
 
-- endpoints.md : contient la liste des routes qui devront être faites dans l'api
-- installation.md : contient une courte série d'instruction pour lancer le projet. 
-- roadmap.md : contient les attendus du projet sous forme de user-stories.
+- **Frontend** : HTML, CSS (Bulma), JavaScript
+- **Backend** : Node.js, Express.js
+- **Base de données** : PostgreSQL
 
-### Dossier front : 
+## Installation
 
-- Un dossier assets qui contient : 
-  - icons : un dossier dans lequel stocker vos icons perso svg (contient déjà une pokeball)
-  - img : contient les images des pokemons, les images portent le nom du numero du pokemon (<numero>.webp)
-- Un index.html avec un début de structure que vous êtes libre d'adapter.
+1. Clonez ce repository :
+
+   ```bash
+   git clone https://github.com/ton-nom-utilisateur/pokedex.git
+2. Installez les dépendances : 
+
+    ```bash
+    npm install
+3. Se positionner dans le dossier /back : 
+    ```bash
+    cd back
+4. Démarrez le serveur :
+    ```bash
+    npm run dev
+
+5. Lancer avec le live server ou localhost:3000

@@ -1,3 +1,5 @@
+SET client_encoding TO 'UTF8';
+
 BEGIN;
 
 INSERT INTO "team"

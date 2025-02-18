@@ -1,5 +1,17 @@
+body, html {
+  font-family: "Montserrat", sans-serif;
+  height: 100%;
+  margin: 0;
+}
+
 body {
-  font-family: "Montserrat", sans-serif;;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
 }
 
 .pkm_img{
@@ -241,19 +253,20 @@ abbr{
 
   /* Modal card detail */
   .modal-card {
-    width: 80%;
+    width: 90%;
     
   }
   .modal-card-foot {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    align-items: center;
   }
   .select {
-    width: 50%;
+    width: 40%;
   }
   .btn_add_team {
-    width: 50%;
+    width: 40%;
   }
 
   /* Box Team */
@@ -268,5 +281,10 @@ abbr{
 }
 
 .footer {
-  padding: 10px 0;
+    position: relative;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    
 }

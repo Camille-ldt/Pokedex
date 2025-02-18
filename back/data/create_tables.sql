@@ -1,5 +1,7 @@
 -- SCRIPT SQL donné à titre indicatif. Les scripts JS ont le même effet --
 
+SET client_encoding TO 'UTF8';
+
 BEGIN;
 
 DROP TABLE IF EXISTS "pokemon", "type", "team", "pokemon_type", "team_pokemon";
